@@ -1,0 +1,353 @@
+/*------------------------------------------variables-----------------------------------
+---------------------------------------------------------------------------------------*/
+/*------------typographie--------------------*/
+:root {
+  --font-prime: "Iceberg", sans-serif;
+  --font-second: "Audiowide", sans-serif;
+  --font-size-prime-desktop: 4vw;
+  --font-size-second-desktop: 2vw;
+  --font-size-third-desktop: 1.5vw;
+  --font-size-text-desktop: 1.8vw;
+  --font-size-prime-responsive: 15px;
+  --font-size-second-responsive: 13px;
+  --font-size-third-responsive: 9px;
+  --font-size-text-responsive: 10px;
+}
+/*----------------couleur------------------*/
+:root{
+  --color-prime: #000000;
+  --color-second: #D9C339;
+  --color-third: #ffffff;
+}
+
+/*---------------espacement-----------------*/
+:root{
+  --margin-prime-desktop: 7.5vw;
+  --margin-second-desktop: 4vw;
+  --margin-third-desktop: 3vw;
+  --margin-fourth-desktop: 1vw;
+  --margin-prime-responsive: 5.31vw;
+  --margin-second-responsive: 2.81vw;
+  --margin-third-responsive: 2.19vw;
+  --margin-fourth-responsive: 0.69vw;
+}
+
+/*-------------------------------------------------------------------------------------
+                     Header
+-------------------------------------------------------------------------------------*/
+   .burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 5vw;
+    position: fixed;
+    top: 2.5vw;
+    right: 10vw;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .ligne {
+    width: 3vw;
+    height: 0.3vw;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    background: var(--color-third);
+  }
+
+  .ligne:hover{
+    background: var(--color-second);
+  }
+
+  .ligne::after,
+  .ligne::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.3vw;
+    border-radius: 0.5vw;
+    background: var(--color-third);
+    position: fixed;
+  }
+  .ligne:hover::after, .ligne:hover::before{
+    background: var(--color-second);
+  }
+  
+  .ligne::after {
+    top: -1vw;
+  }
+  
+  .ligne::before {
+    top: 1vw;
+  } 
+  
+  /*  animation burger */
+  
+   .burger.active .ligne::before {
+    transition: transform .2s ease-in-out;
+    transform: translateY(-1vw) rotate(-45deg)
+  }
+  
+  .burger.active .ligne::after {
+    transition: transform .2s ease-in-out;
+    transform: translateY(1vw) rotate(45deg)
+  }
+  
+  .burger.active .ligne {
+    background: transparent;
+  }
+
+  /*  menu */
+  
+  nav {
+  height: 100vw;
+  width: 30vw;
+  background: var(--color-prime);
+  color: var(--color-third);
+  position: fixed;
+  z-index: 5;
+  transition: all .2s ease-in;
+  left: -300px;
+  opacity: 0;
+
+  }
+  
+  nav ul {
+  margin-top: 10vw;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  }
+  
+  nav .items {
+  display: flex;
+  padding-left: 5vw;
+  justify-content: flex-start;
+  align-items: center;
+  cursor:pointer;
+  }
+  
+  nav .items span {
+    position: relative;
+    margin: 1vw;
+  }
+  nav .items span:hover {
+    color: var(--color-second);
+  }
+  
+  nav .items span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    background: var(--color-second);
+    width: 0%;
+    height: 2px;
+    transition: width .2s ease-in;
+    border-radius: 2px;
+  }
+  
+  nav .items span:hover::after {
+    width: 100%;
+  }
+  
+  nav.menu-active {
+    left: 0;
+    opacity: 1;
+  }
+  /*-----------logo volkswagen-----------*/
+  header div img {
+    position: fixed;
+    left: 10vw;
+    top: 1vw;
+  }
+  /*-----------couverture-----------*/
+
+.couverture{
+    background-image: url('couverture_gti6.png');
+    width: 100%;
+    height: 50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+  }
+  .couverture span{
+    justify-content: flex-end;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    width: auto;
+    height: auto;
+  }
+
+  
+/*-------------------------------------------------------------------------------------
+                     Body global
+-------------------------------------------------------------------------------------*/
+/*--------------------btn-----------------------------------*/
+button{
+  width: 15vw;
+  height: 4.5vw;
+  transition: border-color 0.3s ease, color 0.3s ease
+}
+button:hover{
+  color: var(--color-second);
+  border-color: var(--color-second);
+}
+/* ----------------------typographie--------------------------- */
+h1{
+  font-size: var(--font-size-prime-desktop);
+  margin-top: var(--margin-prime-desktop);
+  margin-left: 20vw;
+}
+h2{
+  font-size: var(--font-size-second-desktop);
+  margin-left: 20vw;
+}
+h3{
+  font-size: var(--font-size-third-desktop);
+}
+p{
+  font-size: var(--font-size-text-desktop);
+  margin: 2vw;
+}
+section main{
+  margin-left: 10vw;
+}
+/*-------------------------------------------------------------------------------------
+                     section découverte
+-------------------------------------------------------------------------------------*/
+video{
+  margin: 2vw;
+}
+.Presentation{
+  margin-left: 0;
+}
+/*-------------------------------------------------------------------------------------
+                     section fiche technique
+-------------------------------------------------------------------------------------*/
+/* animation lorsque la souris survol le h2 */
+#underline .items:hover{
+  color: var(--color-second);
+}
+#underline .items {
+  display: flex;
+  margin-left: 20vw;
+  justify-content: flex-start;
+  align-items: center;
+  cursor:pointer;
+  }
+  
+  #underline .items h2 {
+    position: relative;
+    margin: 0;
+  }
+  
+  #underline .items h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    background: var(--color-second);
+    width: 0%;
+    height: 2px;
+    transition: width .2s ease-in;
+    border-radius: 2px;
+  }
+  
+  #underline .items h2:hover::after {
+    width: 100%;
+  }
+
+  /*---------------- liste-style li ------------------ */
+  #listStyle ul{
+    list-style-type: disc;
+    font-size: var(--font-size-text-desktop);
+  }
+  /* conteneur liste caractéristique et équimement */
+  #listStyle{
+    margin-left: 10vw;
+  }
+  /*----------------losrque le h2 est choisi----------------*/
+  #underline h2.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-second);
+    border-radius: 2px;
+}
+#underline h2.active{
+  color: var(--color-second);
+}
+/* ----------------h2 souligné par défaut------------------------- */
+.character-title.active{
+  color: var(--color-second);
+}
+
+
+/*-------------------------------------------------------------------------------------
+                     section galerie
+-------------------------------------------------------------------------------------*/
+
+.carousel-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 80vw;
+  height: auto;
+  overflow: hidden;
+  margin-left: 10vw;
+
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+.preview, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-second);
+  color: var(--color-third);
+  padding: 1vw;
+  font-size: 6vw;
+  cursor: pointer;
+} 
+
+.preview { left: 0.1vw; }
+.next { right: 0.1vw; }
+
+.total-dot{
+  top: 90%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+}
+.dot{
+  background: var(--color-third);
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  background: transparent;
+  border: 0.3vw solid var(--color-third);
+}
+.dot:hover{
+  background: var(--color-second);
+  cursor: pointer;
+}
+.dot.active{
+  background: var(--color-second);
+}
