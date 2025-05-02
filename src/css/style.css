@@ -301,7 +301,7 @@ video{
   display: flex;
   justify-content: center;
   position: relative;
-  width: 80vw;
+  width: 80%;
   height: auto;
   overflow: hidden;
   margin-left: 10vw;
