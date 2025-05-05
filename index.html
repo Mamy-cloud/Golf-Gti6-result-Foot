@@ -15,8 +15,8 @@
     
 <header class=" w-[100vw] h-[auto] font-(family-name:--font-prime)">
     <!-- barre de navigation -->
-    <div class="bg-(--color-prime) w-[100vw] h-[5vw] border-b-[0.5vw] border-(--color-third) fixed z-30 top-0">
-        <img src="src/img/gti6/logo_volkswagen.png" alt="logo_volkswagen" class=" w-[3vw] h-[3vw]" >
+    <div class="bg-(--color-prime) w-[100vw] h-[5vw] border-b-[0.5vw] border-(--color-third) fixed z-30 top-0 max-[641px]:h-[10vw] max-[641px]:border-b-[1vw]">
+        <img src="src/img/gti6/logo_volkswagen.png" alt="logo_volkswagen" class=" w-[3vw] h-[3vw] max-[641px]:w-[7.5vw] max-[641px]:h-[7.5vw]" >
         <div class="burger">
             <div class="ligne"></div>
         </div>
@@ -45,8 +45,8 @@
     <!-- couverture -->
     <div class="couverture flex flex-col" >
       <span class="flex flex-col items-start">
-        <n class="text-(length:--font-size-second-desktop)">L'héritage Gti, puissance et passion</n>
-        <button type="button" class=" border-[0.5vw] border-(--color-third) rounded-[0.9vw] text-(length:--font-size-second-desktop) cursor-pointer border-solid" >Découvrir</button>
+        <n class="text-(length:--font-size-second-desktop) max-[641px]:text-(length:--font-size-second-responsive)">L'héritage Gti, puissance et passion</n>
+        <button type="button" class=" border-[0.5vw] border-(--color-third) rounded-[0.9vw] text-(length:--font-size-second-desktop) cursor-pointer border-solid max-[641px]:text-(length:--font-size-second-responsive)" >Découvrir</button>
       </span>
     </div>
     <!-- fin couverture -->
@@ -56,25 +56,32 @@
   <!-- section découvrir -->
    <section class="flex flex-col items-start">
       <!-- titre -->
-      <h1>Présentation</h1>
+      <h1 class="ml-[20vw]">Présentation</h1>
       <!-- titre -->
-       <main class="flex flex-row flex-wrap w-[90vw] h-[auto]">
-        <!-- vidéo 1 dans la section -->
-        <video autoplay loop muted class=" Presentation w-2/5 h-[auto]">
-          <source src="src/video/Gti61.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
-        <!-- fin vidéo 1 dans la section -->
-        <p class="Presentation w-2/5 h-[auto]">Lancée en 2011, la Golf VI GTI Edition 35 est une version exclusive qui allie performances, design sportif et équipements premium. <br> Avec une puissance améliorée par rapport à la GTI standard, elle offre une expérience de conduite encore plus dynamique et excitante.</p>
-        <p class="Presentation w-2/5 h-[auto]">Grâce à son moteur revisité et sa transmission performante, la Golf VI GTI Edition 35 offre des sensations dynamiques, une réactivité accrue et un agrément de conduite optimal, que ce soit en mode automatique (DSG) ou manuel.
-        </p>
+       <main class="flex flex-row flex-wrap w-[90vw] h-[auto] ml-[10vw]">
+        <div class="flex flex-row max-[641px]:flex-col">
+          <!-- vidéo 1 dans la section -->
+          <video autoplay loop muted class=" Presentation w-2/5 h-[auto] max-[641px]:w-[80vw]">
+            <source src="src/video/Gti61.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+          <!-- fin vidéo 1 dans la section -->
+          <p class="Presentation w-2/5 h-[auto] max-[641px]:w-[80vw]">Lancée en 2011, la Golf VI GTI Edition 35 est une version exclusive qui allie performances, design sportif et équipements premium. Avec une puissance améliorée par rapport à la GTI standard, elle offre une expérience de conduite encore plus dynamique et excitante.</p>
+        </div>
+
+        <div class="flex flex-row max-[641px]:flex-col-reverse">
+          <p class="Presentation w-2/5 h-[auto] max-[641px]:w-[80vw]">Grâce à son moteur revisité et sa transmission performante, la Golf VI GTI Edition 35 offre des sensations dynamiques, une réactivité accrue et un agrément de conduite optimal, que ce soit en mode automatique (DSG) ou manuel.
+          </p>
+          
+          <!-- vidéo 2 dans la section -->
+          <video autoplay loop muted class=" Presentation w-2/5 h-[auto] max-[641px]:w-[80vw]">
+            <source src="src/video/gti6-3.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+          <!-- fin vidéo 2 dans la section -->
+        </div>
         
-        <!-- vidéo 2 dans la section -->
-        <video autoplay loop muted class=" Presentation w-2/5 h-[auto]">
-          <source src="src/video/gti6-3.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
-        <!-- fin vidéo 2 dans la section -->
+       
        </main>
    </section>
   <!-- fin section découvrir -->
@@ -82,21 +89,21 @@
   <!-- section fiche Technique -->
    <section class="flex flex-col items-start">
     <!-- titre -->
-    <h1>Fiches techniques</h1>
+    <h1 class="ml-[20vw]">Fiches techniques</h1>
     <!-- fin titre -->
 
     <!-- sous-titre -->
     <div class="flex flex-row items-start" id="underline">
-      <div class="items">
+      <div class="items ml-[10vw]">
         <h2 class="character-title">Caractéristiques</h2>
       </div>
-      <div class="items">
+      <div class="items ml-[10vw]">
         <h2>Equipements</h2>
       </div>
     </div>
     <!-- fin sous-titre -->
     <!-- liste des Caractéristiques et équipements -->
-    <span class="flex flex-row items-start h-[26.5vw]" id="listStyle">
+    <span class="flex flex-row items-start h-[auto]" id="listStyle">
       <ul class="character items-start">
         <li>Moteur : 4 cylindres en ligne, turbo</li>
         <li>Cylindrée : 1984 cm³</li>
@@ -126,7 +133,7 @@
    <!-- section galerie -->
     <section class="galerie">
       <!-- titre -->
-       <h1>Galerie multi-média</h1>
+       <h1 class="ml-[20vw]">Galerie multi-média</h1>
       <!-- fin titre -->
        <!-- conteneur carrousel -->
           
@@ -152,12 +159,164 @@
         <span class="dot"></span> 
       </div>
       </div>
-      
-      
-
+      <!-- fin conteneur carrousel -->
     </section>
    <!-- fin section galerie -->
+   <!-- section commentaire -->
+    <section class="flex flex-col">
+      <h1 class="ml-[20vw]">Avis client</h1>
+      <!-- conteneur avis client -->
+      <span class=" comment flex flex-col w-[80vw] h-[50vw] overflow-auto border-t-[0.05vw] border-b-[0.05vw] ml-[10vw]">
+        <!-- avis client -->
+        <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw]">
+          <img src="src/img/gti6/icon_profile (1).png" class=" mt-[1vw] mb-[1vw] w-[30vw] h-[30vw]" alt="icon_profile">
+          <p>Je possède un golf 6 gti depuis mars 2020 maintenant, cette voiture est très belle esthétiquement.</p>
+        </div>
+        <!-- avis client -->
+        <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw]">
+          <img src="src/img/gti6/icon_profile (1).png" class=" mt-[1vw] mb-[1vw] w-[30vw] h-[30vw]" alt="icon_profile">
+          <p>J'ai craqué pour la Golf 6 GTI Edition 35, je la trouve très classe !
+            J'adore le style.
+            </p>
+        </div>
+        <!-- avis client -->
+        <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw]">
+          <img src="src/img/gti6/icon_profile (1).png" class=" mt-[1vw] mb-[1vw] w-[30vw] h-[30vw]" alt="icon_profile">
+          <p>Bientôt 200.000 km et toujours aussi dynamique,
+            Avec la suspension pilotée réglable cette voiture est un régal ,</p>
+        </div>
+        <!-- avis client -->
+        <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw]">
+          <img src="src/img/gti6/icon_profile (1).png" class=" mt-[1vw] mb-[1vw] w-[30vw] h-[30vw]" alt="icon_profile">
+          <p>Du pilotage tranquille et confortable au pilotage dynamique ,voir rageur, elle s’avère d’une polyvalence impressionnante,</p>
+        </div>
+        <!-- avis client -->
+        <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw]">
+          <img src="src/img/gti6/icon_profile (1).png" class=" mt-[1vw] mb-[1vw] w-[30vw] h-[30vw]" alt="icon_profile">
+          <p>D’allure légèrement agressive mais discrète et très élégante ( plus que la GOLF 7) c’est un véhicule de connaisseur
+          </p>
+        </div>
+      </span>
+      <!-- fin conteneur avis client -->
+    </section>
+   <!-- fin section commentaire -->
+
+    <!-- section prix et conact -->
+    <section class="flex flex-col">
+      <h1 class="ml-[20vw]">Bon plan</h1>
+      <div class="flex flex-row max-[641px]:flex-col">
+        <!-- parti prix -->
+       <main class="flex flex-col justify-center ml-[10vw]" >
+        <span class="container-price flex flex-col w-[53vw] h-[30vw] overflow-hidden border-t-[0.05vw] border-b-[0.05vw] max-[641px]:w-[60vw] max-[641px]:h-[135vw]">
+          <!-- prix 1 -->
+          <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw] max-[641px]:flex-col">
+            <img src="src/img/golf-6-gti1.png" class="w-[33vw] h-[17vw] mr-[1.5vw] mt-[1vw] mb-[1vw] max-[641px]:w-[60vw] max-[641px]:h-[30vw]" alt="img_price">
+            <div class=" price flex flex-col ">
+              <h3 class="font-bold">Golf 6 gti édition 35</h3>
+              <br>
+              <p>Année : 2011  /</p>
+              <p>Kilométrage : 140 000 km/</p>
+              <p>Carburant : essence / </p>
+              <p>Transmission : manuel</p>
+              <br>
+              <h3 class="font-bold">15 000 €</h3>
+            </div>
+          </div>
+          <!-- prix 2 -->
+          <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw] max-[641px]:flex-col">
+            <img src="src/img/golf-6-gti1.png" class="w-[33vw] h-[17vw] mr-[1.5vw] mt-[1vw] mb-[1vw] max-[641px]:w-[60vw] max-[641px]:h-[30vw]" alt="img_price">
+            <div class=" price flex flex-col">
+              <h3 class="font-bold">Golf 6 gti édition 35</h3>
+              <br>
+              <p>Année : 2012  /</p>
+              <p>Kilométrage : 100 000 km/</p>
+              <p>Carburant : essence / </p>
+              <p>Transmission : manuel</p>
+              <br>
+              <h3 class="font-bold">18 000 €</h3>
+            </div>
+          </div>
+          <!-- prix 3 -->
+          <div class="flex flex-row border-t-[0.05vw] border-b-[0.05vw] mb-[1.5vw] max-[641px]:flex-col">
+            <img src="src/img/golf-6-gti1.png" class="w-[33vw] h-[17vw] mr-[1.5vw] mt-[1vw] mb-[1vw] max-[641px]:w-[60vw] max-[641px]:h-[30vw]" alt="img_price">
+            <div class=" price flex flex-col">
+              <h3 class="font-bold">Golf 6 gti édition 35</h3>
+              <br>
+              <p>Année : 2011  /</p>
+              <p>Kilométrage : 150 000 km/</p>
+              <p>Carburant : essence / </p>
+              <p>Transmission : automatique</p>
+              <br>
+              <h3 class="font-bold">11 000 €</h3>
+            </div>
+          </div>
+        </span>
+        <button type="button" class=" btn-price border-[0.5vw] border-(--color-third) rounded-[0.9vw] text-(length:--font-size-second-desktop) cursor-pointer border-solid mt-[1.5vw] ml-[10vw] max-[641px]:m-[5vw]" >Afficher plus</button>
+       </main>
+      
+      <!-- fin partie prix -->
+
+      <!-- début parti contact -->
+       <main class=" contact flex flex-col justify-center items-start w-[30vw] h-[25vw] border-[0.5vw] border-solid ml-[1vw] max-[641px]:w-[60vw] max-[641px]:h-[60vw] max-[641px]:ml-[10vw] max-[641px]:border-[1.5vw]"> 
+        <h3 class="font-bold">Contact:</h3><p> </p>
+        <h3>Appel:</h3>
+        <h3>038 89 239 16</h3> <p> </p>
+        <h3>Whatsapp:</h3>
+        <h3>+261 38 89 239 16</h3>
+       </main>
+      <!-- fin parti contact -->
+    </div>
+      
+    </section>
+    <!-- fin section prix et conact -->
 </article>
+
+<footer class="border-t-[0.5vw] flex flex-col font-(family-name:--font-prime) mt-(--margin-prime-desktop) ">
+  <!-- partie accès rapide, réseau sociaux, information de contact -->
+  <main class="border-b-[0.5vw] flex flex-row flex-wrap pt-(--margin-prime-desktop) pb-(--margin-prime-desktop) top-0">
+    <span class="ml-[10vw] mr-[10vw]">
+      <h3>Informations de contact:</h3>
+      <ul>
+        <li>Numéro de téléphone : 038 89 239 16</li>
+        <li>Email : mamycompteprofessionnel@gmail.com</li>
+      </ul>
+      
+    </span>
+    <span class="ml-[10vw] mr-[10vw]">
+      <h3>Accès rapide</h3>
+      <ul>
+        <li>Accueil</li>
+        <li>Découvrir</li>
+        <li>Fiches techniques</li>
+        <li>Galerie</li>
+        <li>Bon plan & contact</li>
+      </ul>
+
+    </span>
+    <span class="ml-[10vw] mr-[10vw]">
+      <h3>Réseaux sociaux</h3>
+      <div class="flex flex-row">
+        <img src="src/img/gti6/icons8-facebookBlanc.png" class="w-[5vw] h-[5vw] m-[0.5vw]" alt="facebook">
+        <img src="src/img/gti6/icons8-instagramBlanc.png" class="w-[5vw] h-[5vw] m-[0.5vw]" alt="instagram">
+        <img src="src/img/gti6/icons8-linkedinBlanc.png" class="w-[5vw] h-[5vw] m-[0.5vw]" alt="linkedIn">
+      </div>
+    </span>
+  </main>
+  <!-- fin partie accès rapide, réseau sociaux, information de contact -->
+  <!-- partie copyrigth, mention et condition d'utilisation -->
+  <main class="ml-[10vw]">
+    <span class="flex flex-row max-[641px]:flex-wrap">
+      <p class="max-[641px]:pt-[5vw] max-[641px]:pr-[5vw]">-Mentions légales </p>
+      <p class="max-[641px]:pt-[5vw] max-[641px]:pr-[5vw]">-Politique de confidentialités</p>
+      <p class="max-[641px]:pb-[5vw]">-Conditions générales d'utilisations (CGU)</p>
+    </span>
+    <span class="flex flex-row pb-(--margin-third-desktop)">
+      <img src="src/img/gti6/icons8-copyrightBlanc.png" class="w-[5vw] h-[5vw]" alt="copyrigth">
+      <h3>Andriamialisoa Mamy Tantely</h3>
+    </span>
+  </main>
+  <!-- fin partie copyrigth, mention et condition d'utilisation -->
+</footer>
 
 </body>
 
