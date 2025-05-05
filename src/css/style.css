@@ -5,13 +5,13 @@
   --font-prime: "Iceberg", sans-serif;
   --font-second: "Audiowide", sans-serif;
   --font-size-prime-desktop: 4vw;
-  --font-size-second-desktop: 2vw;
-  --font-size-third-desktop: 1.5vw;
-  --font-size-text-desktop: 1.8vw;
-  --font-size-prime-responsive: 15px;
-  --font-size-second-responsive: 13px;
-  --font-size-third-responsive: 9px;
-  --font-size-text-responsive: 10px;
+  --font-size-second-desktop: 2.2vw;
+  --font-size-third-desktop: 1.9vw;
+  --font-size-text-desktop: 1.7vw;
+  --font-size-prime-responsive: 5vw;
+  --font-size-second-responsive: 4vw;
+  --font-size-third-responsive: 3.75vw;
+  --font-size-text-responsive: 3.25vw;
 }
 /*----------------couleur------------------*/
 :root{
@@ -26,8 +26,8 @@
   --margin-second-desktop: 4vw;
   --margin-third-desktop: 3vw;
   --margin-fourth-desktop: 1vw;
-  --margin-prime-responsive: 5.31vw;
-  --margin-second-responsive: 2.81vw;
+  --margin-prime-responsive: 17vw;
+  --margin-second-responsive: 10vw;
   --margin-third-responsive: 2.19vw;
   --margin-fourth-responsive: 0.69vw;
 }
@@ -83,6 +83,29 @@
   .ligne::before {
     top: 1vw;
   } 
+  @media (max-width: 640px) {
+    .burger{
+      width: 8vw;
+      height: 8vw;
+      top: 5.5vw;
+    }
+    .ligne {
+      width: 8vw;
+      height: 0.8vw;
+    }
+    .ligne::after,
+  .ligne::before {
+    height: 0.8vw;
+
+  }
+  .ligne::after {
+    top: -2.5vw;
+  }
+  
+  .ligne::before {
+    top: 2.5vw;
+  } 
+  }
   
   /*  animation burger */
   
@@ -99,22 +122,31 @@
   .burger.active .ligne {
     background: transparent;
   }
+  @media (max-width: 640px) {
+    .burger.active .ligne::before {
+      transform: translateY(-2.5vw) rotate(-45deg)
+    }
+    
+    .burger.active .ligne::after {
+      transform: translateY(2.5vw) rotate(45deg)
+    }
+    
+  }
 
   /*  menu */
   
   nav {
-    height: 100%;
-    width: 30vw;
-    background: var(--color-prime);
-    color: var(--color-third);
-    position: fixed;
-    z-index: 5;
-    transition: all .2s ease-in;
-    left: -30vw;
-    opacity: 0;
-  
-    }
-  
+  height: 100%;
+  width: 30vw;
+  background: var(--color-prime);
+  color: var(--color-third);
+  position: fixed;
+  z-index: 5;
+  transition: all .2s ease-in;
+  left: -30vw;
+  opacity: 0;
+
+  }
   nav ul {
   margin-top: 10vw;
   width: 100%;
@@ -159,11 +191,29 @@
     left: 0;
     opacity: 1;
   }
+  @media (max-width: 640px) {
+    nav {
+      width: 50%;
+    }
+    nav ul {
+      margin-top: 20vw;
+    }
+    nav ul li span {
+      font-size: 5vw;
+    }
+  }
   /*-----------logo volkswagen-----------*/
   header div img {
     position: fixed;
     left: 10vw;
     top: 1vw;
+  }
+  @media (max-width: 640px) {
+    header div img {
+      
+      left: 10vw;
+      top: 1vw;
+    }
   }
   /*-----------couverture-----------*/
 
@@ -183,6 +233,11 @@
     width: auto;
     height: auto;
   }
+  @media (max-width: 640px) {
+    .couverture{
+      height: 80vw;
+    }
+  }
 
   
 /*-------------------------------------------------------------------------------------
@@ -198,15 +253,22 @@ button:hover{
   color: var(--color-second);
   border-color: var(--color-second);
 }
+@media (max-width: 640px) {
+  button{
+    width: 27.5vw;
+    height: 8vw;
+  }
+}
+
 /* ----------------------typographie--------------------------- */
 h1{
   font-size: var(--font-size-prime-desktop);
   margin-top: var(--margin-prime-desktop);
-  margin-left: 20vw;
+  /* margin-left: 20vw; */
 }
 h2{
   font-size: var(--font-size-second-desktop);
-  margin-left: 20vw;
+  /* margin-left: 20vw; */
 }
 h3{
   font-size: var(--font-size-third-desktop);
@@ -215,9 +277,26 @@ p{
   font-size: var(--font-size-text-desktop);
   margin: 2vw;
 }
-section main{
-  margin-left: 10vw;
+
+@media (max-width: 640px) {
+  h1{
+    font-size: var(--font-size-prime-responsive);
+    margin-top: var(--margin-prime-responsive);
+    /* margin-left: 20vw; */
+  }
+  h2{
+    font-size: var(--font-size-second-responsive);
+    /* margin-left: 20vw; */
+  }
+  h3{
+    font-size: var(--font-size-third-responsive);
+  }
+  p{
+    font-size: var(--font-size-text-responsive);
+    margin: 2vw;
+  }
 }
+
 /*-------------------------------------------------------------------------------------
                      section découverte
 -------------------------------------------------------------------------------------*/
@@ -236,7 +315,6 @@ video{
 }
 #underline .items {
   display: flex;
-  margin-left: 20vw;
   justify-content: flex-start;
   align-items: center;
   cursor:pointer;
@@ -265,9 +343,16 @@ video{
   }
 
   /*---------------- liste-style li ------------------ */
-  #listStyle ul{
+  #listStyle ul li{
     list-style-type: disc;
     font-size: var(--font-size-text-desktop);
+    margin: var(--margin-third-desktop);
+  }
+
+  @media (max-width: 640px) {
+    #listStyle ul li{
+      font-size: var(--font-size-text-responsive);
+    }
   }
   /* conteneur liste caractéristique et équimement */
   #listStyle{
@@ -305,24 +390,25 @@ video{
   height: 80vw;
   overflow: hidden;
   margin-left: 10vw;
-
+  object-fit: cover;
+  border: 0.5vw solid var(--color-third);
 }
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: auto;
 }
-
 .carousel img{
   width: 100%;
   height: 60%;
   object-fit: cover;
+  margin-top: 15vw;
 }
+
+
 
 .preview, .next {
   position: absolute;
-  top: 30%;
+  top: 50%;
   transform: translateY(-50%);
   background: var(--color-second);
   color: var(--color-third);
@@ -335,7 +421,7 @@ video{
 .next { right: 0.1vw; }
 
 .total-dot{
-  top: 55%;
+  top: 90%;
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -345,8 +431,8 @@ video{
   margin-left: 0.5vw;
   margin-right: 0.5vw;
   border-radius: 50%;
-  width: 2vw;
-  height: 2vw;
+  width: 2.5vw;
+  height: 2.5vw;
   background: transparent;
   border: 0.3vw solid var(--color-third);
 }
@@ -354,8 +440,73 @@ video{
   background: var(--color-second);
   cursor: pointer;
 }
+@media (pointer: coarse) {
+  .dot:hover{
+    cursor: none;
+  }
+}
+
 .dot.active{
   background: var(--color-second);
 }
 
-/* adddada */
+/*-------------------------------------------------------------------------------------
+                     section avis client
+-------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+                     section prix et contact
+-------------------------------------------------------------------------------------*/
+.price p{
+  margin: 0;
+}
+.btn-price{
+  height: 3vw;
+  width: 20vw;
+  font-size: 1.5vw;
+}
+@media (max-width: 640px){
+  .btn-price{
+    height: 7.5vw;
+    width: 50vw;
+    font-size: 3.5vw;
+  }
+}
+.container-price.active{
+  height: auto;
+}
+
+.contact h3{
+  margin-left: 5vw;
+}
+.contact p{
+  margin: 0.9vw;
+}
+/*-------------------------------------------------------------------------------------
+                     footer
+-------------------------------------------------------------------------------------*/
+footer{
+  background-image: url('footer_gti6.jpg');
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-end;
+}
+footer main span ul{
+  margin: 1vw;
+  list-style-type: disc;
+  font-size: var(--font-size-text-desktop);
+}
+@media (max-width: 640px){
+  footer main span ul{
+    margin: 2vw;
+    font-size: var(--font-size-text-responsive);
+  }
+  footer main span p{
+    margin: 0;
+  
+  }
+}
+
