@@ -1,5 +1,4 @@
-// (function(){
-//   'use strict';
+
   //---------------------navmenu----------------------------------
 
 const btn = document.querySelector(".burger");
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
    const offset = -index * 100 + "%";
    carousel.style.transform = `translateX(${offset})`;
    // Mettre à jour l'état des dots
-  dots.forEach(d => d.classList.remove("active"));
-  dots[index].classList.add("active");
+   dots.forEach(d => d.classList.remove("active"));
+   dots[index].classList.add("active");
  }
 
  //lorsque je clique sur le bouton preview
@@ -105,5 +104,34 @@ document.addEventListener("DOMContentLoaded", () => {
        dots[0].classList.add("active"); // Ajoute la classe 'active' au dot d'index 0
    }
  });
-// )
+
+ //auto slide carrousel
+ function autoSlide() {
+  index++; // Incrémente l'index
+  if (index >= totalImages) index = 0; // Reset l'index pour créer une boucle infinie
+
+  callOffset();
+
+  // Répéter l'animation
+  setTimeout(autoSlide, 4000);
+}
+setTimeout(autoSlide, 4000);
+
+//----------------------------------Prix--------------------------------------------
+
+  let btnShowMore = document.querySelector(".btn-price");
+  let slide = document.querySelector(".container-price");
+
+  btnShowMore.addEventListener("click", () => {
+    slide.classList.toggle("active");
+    if (btnShowMore.innerText === "Afficher plus") {
+      btnShowMore.innerText = "Afficher moins";
+      
+    } else {
+      btnShowMore.innerText = "Afficher plus";
+    }
+  
+  });
+  
+
 
